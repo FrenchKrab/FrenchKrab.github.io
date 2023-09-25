@@ -21,3 +21,8 @@ I am a first year PhD student at IRIT and I work on **interactive approaches for
 - **Ecole Normale Supérieure de Lyon** - *Master 2 Informatique Fondamentale* - 2021-2022
 - **Université Lyon 1 Claude Bernard** - *Master 1 Informatique, rank 2/125* - 2020-2021
 - **Université Picardie Jules Verne** - *Licence d'informatique, mention Très bien*  - 2017-2020
+
+# Repositories
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&repo=IS2023-powerset-diarization)](https://github.com/FrenchKrab/IS2023-powerset-diarization)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&repo=datasets-pyannote)](https://github.com/FrenchKrab/datasets-pyannote) {{ markdownify }}
