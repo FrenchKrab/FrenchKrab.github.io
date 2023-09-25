@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Accueil
+title: FrenchKrab
 ---
 
 I am a first year PhD student at IRIT and I work on **interactive approaches for speaker diarization**, my goal is to find how to make the most out of human time to improve speaker diarization performance. I work under the supervision of [Hervé Bredin](https://herve.niderb.fr/fastpages/).
