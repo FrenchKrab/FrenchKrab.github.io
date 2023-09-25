@@ -11,6 +11,8 @@ I am a first year PhD student at IRIT and I work on **interactive approaches for
 
 # Recent work
 
+- [**Powerset multi-class cross entropy loss for neural speaker diarization**](https://www.isca-speech.org/archive/interspeech_2023/plaquet23_interspeech.html) ([Alexis Plaquet](frenchkrab.github.io), [Hervé Bredin](https://herve.niderb.fr/)) - *Proc. INTERSPEECH 2023* ([repo](https://github.com/FrenchKrab/IS2023-powerset-diarization))
+- Participation in [**JSALT 2023**](https://jsalt2023.univ-lemans.fr/en/index.html) : [xdiar team](https://www.youtube.com/live/c3zYuH6n6os) - *confidence measures, calibration, semi-supervised learning*
 - [**Semi and self-supervised learning for speaker diarization**](https://www.irit.fr/SAMOVA/site/wp-content/uploads/2022/09/2022_AlexisPlaquet_Stage.pdf) - *5 months internship from feb-jun 2022, supervised by Hervé Bredin*
 
 
