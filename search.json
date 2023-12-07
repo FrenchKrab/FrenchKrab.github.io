@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "First blog article test :)"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\n\ntest\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nAlexis Plaquet\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Alexis Plaquet",
+    "section": "",
+    "text": "I am a second year PhD student at IRIT (Toulouse, France) and I work on interactive approaches for speaker diarization, my goal is to find how to make the most out of human time to improve speaker diarization performance. I work under the supervision of Hervé Bredin.\n\nRecent work\n\nPowerset multi-class cross entropy loss for neural speaker diarization (Alexis Plaquet, Hervé Bredin) - Proc. INTERSPEECH 2023 (repo)\nParticipation in JSALT 2023 : xdiar team - confidence measures, calibration, semi-supervised learning\nSemi and self-supervised learning for speaker diarization - 5 months internship from feb-jun 2022, supervised by Hervé Bredin\n\n\n\nEducation\n\nEcole Normale Supérieure de Lyon - Master 2 Informatique Fondamentale - 2021-2022\nUniversité Lyon 1 Claude Bernard - Master 1 Informatique, rank 2/125 - 2020-2021\nUniversité Picardie Jules Verne - Licence d’informatique, mention Très bien - 2017-2020\n\n\n\nRepositories"
+  }
+]
