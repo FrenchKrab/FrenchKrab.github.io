@@ -1,12 +1,21 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+title: "Alexis Plaquet"
+about:
+  template: marquee
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/FrenchKrab
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/alexis-plaquet/
+    - icon: book
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=7gJ465gAAAAJ
 
-layout: home
-title: FrenchKrab
 ---
 
-I am a first year PhD student at IRIT and I work on **interactive approaches for speaker diarization**, my goal is to find how to make the most out of human time to improve speaker diarization performance. I work under the supervision of [Hervé Bredin](https://herve.niderb.fr/).
+I am a second year PhD student at IRIT (Toulouse, France) and I work on **interactive approaches for speaker diarization**, my goal is to find how to make the most out of human time to improve speaker diarization performance. I work under the supervision of [Hervé Bredin](https://herve.niderb.fr/).
 
 
 # Recent work
@@ -24,5 +33,10 @@ I am a first year PhD student at IRIT and I work on **interactive approaches for
 
 # Repositories
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&repo=IS2023-powerset-diarization)](https://github.com/FrenchKrab/IS2023-powerset-diarization)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&repo=datasets-pyannote)](https://github.com/FrenchKrab/datasets-pyannote) {{ markdownify }}
+```{=html}
+<a href="https://github.com/FrenchKrab/IS2023-powerset-diarization"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&amp;repo=IS2023-powerset-diarization" alt="Readme Card"></a>
+```
+
+```{=html}
+<a href="https://github.com/FrenchKrab/datasets-pyannote"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&amp;repo=datasets-pyannote" alt="Readme Card"></a>
+```
