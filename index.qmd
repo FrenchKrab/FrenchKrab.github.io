@@ -20,9 +20,10 @@ I am a second year PhD student at IRIT (Toulouse, France) and I work on **intera
 
 # Recent work
 
-- [**Powerset multi-class cross entropy loss for neural speaker diarization**](https://www.isca-speech.org/archive/interspeech_2023/plaquet23_interspeech.html) ([Alexis Plaquet](frenchkrab.github.io), [Hervé Bredin](https://herve.niderb.fr/)) - *Proc. INTERSPEECH 2023* ([repo](https://github.com/FrenchKrab/IS2023-powerset-diarization))
+- **On the calibration of powerset speaker diarization models** ([Alexis Plaquet](frenchkrab.github.io), [Hervé Bredin](https://herve.niderb.fr/)) - *Proc. INTERSPEECH 2024* ([📃](https://www.isca-speech.org/archive/interspeech_2023/plaquet23_interspeech.html) [🌐](https://github.com/FrenchKrab/IS2024-powerset-calibration) [🐍](https://github.com/FrenchKrab/powerset_calibration/))
+- **Powerset multi-class cross entropy loss for neural speaker diarization** ([Alexis Plaquet](frenchkrab.github.io), [Hervé Bredin](https://herve.niderb.fr/)) - *Proc. INTERSPEECH 2023* ([📃](https://www.isca-speech.org/archive/interspeech_2023/plaquet23_interspeech.html)[🌐](https://github.com/FrenchKrab/IS2023-powerset-diarization))
 - Participation in [**JSALT 2023**](https://jsalt2023.univ-lemans.fr/en/index.html) : [xdiar team](https://www.youtube.com/live/c3zYuH6n6os) - *confidence measures, calibration, semi-supervised learning*
-- [**Semi and self-supervised learning for speaker diarization**](https://www.irit.fr/SAMOVA/site/wp-content/uploads/2022/09/2022_AlexisPlaquet_Stage.pdf) - *5 months internship from feb-jun 2022, supervised by Hervé Bredin*
+- **Semi and self-supervised learning for speaker diarization** - *5 months internship from feb-jun 2022, supervised by Hervé Bredin*  ([📃](https://www.irit.fr/SAMOVA/site/wp-content/uploads/2022/09/2022_AlexisPlaquet_Stage.pdf))
 
 
 # Education
@@ -31,12 +32,6 @@ I am a second year PhD student at IRIT (Toulouse, France) and I work on **intera
 - **Université Lyon 1 Claude Bernard** - *Master 1 Informatique, rank 2/125* - 2020-2021
 - **Université Picardie Jules Verne** - *Licence d'informatique, mention Très bien*  - 2017-2020
 
-# Repositories
+# Other
 
-```{=html}
-<a href="https://github.com/FrenchKrab/IS2023-powerset-diarization"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&amp;repo=IS2023-powerset-diarization" alt="Readme Card"></a>
-```
-
-```{=html}
-<a href="https://github.com/FrenchKrab/datasets-pyannote"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FrenchKrab&amp;repo=datasets-pyannote" alt="Readme Card"></a>
-```
+- [💾 datasets-pyannote](https://github.com/FrenchKrab/datasets-pyannote) : a Python package to download and prepare datasets for `pyannote.audio`
