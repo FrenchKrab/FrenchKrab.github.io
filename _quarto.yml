@@ -16,7 +16,7 @@ website:
 format:
   html:
     include-in-header:
-    - text: <meta name=\"google-site-verification\" content=\"YyMRic_9ItqEzzD2DvaNG58768uRzedZaRhkMABRdEo\"/>
+    - text: <meta name="google-site-verification" content="YyMRic_9ItqEzzD2DvaNG58768uRzedZaRhkMABRdEo"/>
     mermaid:
       theme: default
     theme:
