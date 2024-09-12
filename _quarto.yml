@@ -9,12 +9,14 @@ website:
       - href: index.qmd
         icon: file-person
         text: About
-      # - href: blog.qmd
-      #   icon: journal-text
-      #   text: Blog
+      - href: blog.qmd
+        icon: journal-text
+        text: Blog
 
 format:
   html:
+    mermaid:
+      theme: default
     theme:
       light: united
     css: styles.css

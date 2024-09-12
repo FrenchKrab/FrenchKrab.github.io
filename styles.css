@@ -3,3 +3,21 @@
 body {
     background-color: rgb(255, 248, 239);
 }
+
+
+
+
+table, th, td {
+    border: 1px dotted gray;
+}
+
+th {
+    border-bottom: 1px solid rgb(158, 158, 158);
+}
+td:hover {
+    /* background-color: #f6e6ff; */
+    border-style: solid;
+}
+tr:hover {
+    background-color: rgb(255, 255, 255);
+}
