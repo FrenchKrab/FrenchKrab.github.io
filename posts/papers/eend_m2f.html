@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alexis Plaquet">
+<meta name="dcterms.date" content="2024-09-12">
+
+<title>EEND-M2F : Reading notes – FrenchKrab</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="mermaid-theme" content="default">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">FrenchKrab</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-file-person" role="img">
+</i> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> <i class="bi bi-journal-text" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">EEND-M2F : Reading notes</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">paper_reading</div>
+                <div class="quarto-category">speaker_diarization</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Alexis Plaquet </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 12, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a>
+  <ul class="collapse">
+  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature extraction</a></li>
+  <li><a href="#queries-and-transformer-layers" id="toc-queries-and-transformer-layers" class="nav-link" data-scroll-target="#queries-and-transformer-layers">Queries and transformer layers</a></li>
+  <li><a href="#attention-masks" id="toc-attention-masks" class="nav-link" data-scroll-target="#attention-masks">Attention masks</a>
+  <ul class="collapse">
+  <li><a href="#creating-the-next-attention-mask" id="toc-creating-the-next-attention-mask" class="nav-link" data-scroll-target="#creating-the-next-attention-mask">Creating the next attention mask</a></li>
+  <li><a href="#creating-the-final-prediction-y-from-ql" id="toc-creating-the-final-prediction-y-from-ql" class="nav-link" data-scroll-target="#creating-the-final-prediction-y-from-ql">Creating the final prediction Y from QL</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a>
+  <ul class="collapse">
+  <li><a href="#permutation-invariance" id="toc-permutation-invariance" class="nav-link" data-scroll-target="#permutation-invariance">Permutation invariance</a></li>
+  <li><a href="#training-loss" id="toc-training-loss" class="nav-link" data-scroll-target="#training-loss">Training loss</a></li>
+  <li><a href="#deep-supervision" id="toc-deep-supervision" class="nav-link" data-scroll-target="#deep-supervision">Deep supervision</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p><strong>EEND-M2F: Masked-attention mask transformers for speaker diarization</strong> <a href="https://www.isca-archive.org/interspeech_2024/harkonen24_interspeech.html">📃</a> — by <em>Marc Härkönen, Samuel J. Broughton, Lahiru Samarakoon</em>, Interspeech 2024</p>
+<p>This paper proposes a “novel” architecture for speaker diarization (actually applies Mask2Former from image segmentation to speaker diarization, which turns out to be a good idea) and claims some very strong results, most notably state-of-the-art diarization error rate on:</p>
+<ul>
+<li>AISHELL-4: 13.2 -&gt; 13.2 (nice enough)</li>
+<li>AliMeeting (far): 23.3 -&gt; 13.2 (!)</li>
+<li>AliMeeting (near): 22.59 -&gt; 10.45 (!)</li>
+<li>RAMC: 13.58 -&gt; 11.1 (it seems everyone is stuck at 11.0 or 11.1 nowadays though)</li>
+<li>DIHARD-III : 16.76 -&gt; 16.07 (!)</li>
+</ul>
+<p>(as well as some disappointing results on some datasets, until someone fixes the problem by next Interspeech)</p>
+<p>And probably the most important part of this paper is that it returns to a pure end-to-end approach to speaker diarization, while being VERY VERY fast with a 5700 real-time factor (158 hours in 100 seconds). Being end-to-end means it requires quite a bit of memory to process long files (= intractable for very long files), but if that ever happens, it’s always possible to plug these models into an existing “hybrid” pipeline such as pyannote.audio to process the file in chunks.</p>
+<p>I won’t speed too long on the intuition or results since I’m mostly interested in explaining <em>how it works</em>. But the main idea is to consider speaker diarization as an object segmentation task. Usually (in vision), this means predicting N masks of the image for N classes of objects, to mask the corresponding objects on the image. Diarization turns out to be a form of object segmentation, where each speaker is an object class, and the image is actually a 1D waveform.</p>
+<p>Here is an attempt at a detailed breakdown of the paper to make it easy to implement (and so that I can read this again when my knowledge on this paper evaporates in one week). I have no interest in analyzing the results, the paper does that better than me. But what the paper doesn’t have is unlimited space to put wastefully detailed figures &gt;:)</p>
+<p><em>(Hopefully I’m not making huge mistakes)</em></p>
+</section>
+<section id="architecture" class="level1">
+<h1>Architecture</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/eend_m2f_fig1.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Taken from the original paper</figcaption>
+</figure>
+</div>
+<p>The original paper contains a rather clear figure overview of what’s happening. But let’s unfold the process step by step.</p>
+<section id="feature-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="feature-extraction">Feature extraction</h2>
+<p>Nothing fancy happens there, this is the part in green in the figure.</p>
+<p>First we extract <code>D'</code> basic features from a waveform at a certain resolution, this gives us our original input tensor <code>X: (T', D')</code>.</p>
+<p><code>X</code> is then downsampled using convolution to obtain a <code>(T, D')</code>-shaped tensor (in the paper, <code>T=T'/10</code>), that is then passed to (6) conformers. This gives <code>E': (T, D)</code> (<span class="math inline">\(\mathcal{E}\)</span> in the paper) that has a lower temporal resolution and a higher number of dimensions.</p>
+<p>Finally, we upsample <code>E'</code> with another convolution layer to obtain <code>E: (T', D)</code> that has a higher temporal resolution (same as <code>X</code>) but still more features.</p>
+<p>The paper chooses <code>D=256</code> but doesn’t elaborate on the choice, with Mel-features of size <code>D'=25</code> of stride 10ms and window size 25ms.</p>
+<p>To summarize this part:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    X["X\n(T', D')"]:::vector --&gt; conv1[conv1]:::module
+    conv1 --&gt; a1["(T, D')"]:::vector
+    a1 --&gt; conf[conformers]:::module
+    conf --&gt; E1["E'\n(T, D)"]:::vector
+    E1 --&gt; conv2[conv2]:::module
+    conv2 --&gt; E2["E\n(T', D)"]:::vector
+
+    classDef module fill:#f99,stroke:#333,stroke-width:4px;
+    classDef vector fill:#ddf,stroke:#88d,stroke-width:2px,stroke-dasharray: 10 4;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<!-- 
+```
+    X: (T', D')
+
+    a1: (T, D') = conv1(X)
+    E': (T, D) = conformers(a1)
+    E: (T', D) = conv2(E')
+``` 
+-->
+</section>
+<section id="queries-and-transformer-layers" class="level2">
+<h2 class="anchored" data-anchor-id="queries-and-transformer-layers">Queries and transformer layers</h2>
+<p>The architecture is centered around “queries”, called like that because they are passed as queries to the transformer layers of the architecture (surprise). Those transformers are also called “query modules” since they generate a new query (for the next transformer to ingest).</p>
+<p>The model contains a <em>learnt</em> initial query tensor <code>Q0: (N, D)</code> (randomly initialized at model creation). The model contains a certain number <code>L</code> of Transformer layers. Each layer receives a query <span class="math inline">\(Q_i\)</span> and outputs a query <span class="math inline">\(Q_{i+1}\)</span>, so we will obtain <code>Q1</code>, <code>Q2</code>, …, <code>QL</code> after each layer. <em>At inference</em>, the speaker diarization output will only be determined from the very last query <code>QL</code> (the others are discarded).</p>
+<p>The <code>N</code> from the dimension is an hyperparameter that determines the maximum number of supported speakers. The paper chooses <code>N=50</code> which should be more than enough (and curiously yields better results than 25 or 75). Each of the <code>N</code> queries in the query tensor maps one speaker to some relevant dimensions.</p>
+<p>Now if we want to summarize the process this is what happens:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    Q0["Q0\n(N, D)"]:::vector --query--&gt; tr1[Transformer1]:::module
+    M1["Mask #1\n(N, D)"]:::vector --attn mask--&gt; tr1
+    tr1 --&gt; Q1["Q1\n(N, D)"]:::vector
+
+    Q1 --query--&gt; tr2[Transformer2]:::module
+    M2["Mask #2\n(N, D)"]:::vector --attn mask--&gt; tr2
+    tr2 --&gt; Q2["Q2\n(N, D)"]:::vector
+
+    Q2 -. "..and so on.." .-&gt; trL[TransformerL]:::module
+    ML["Mask #L\n(N, D)"]:::vector --attn mask--&gt; trL
+    trL --&gt; QL["QL\n(N, D)"]:::vector
+    QL -.Mysterious additional step.-&gt; diar["Diarization output\n(T, S)"]:::vector
+
+
+    E1["E'\n(T, D)"]:::vector --key &amp; value--&gt; tr1
+    E1 --key &amp; value--&gt; tr2
+    E1 --key &amp; value--&gt; trL
+
+    classDef module fill:#f99,stroke:#333,stroke-width:4px;
+    classDef vector fill:#ddf,stroke:#88d,stroke-width:2px,stroke-dasharray: 10 4;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>You can see how we generate new queries after each layer until we’re left with the final one. And for that each transformer layer uses <code>key=value=E'</code> (downsampled embeddings <span class="math inline">\(\mathcal{E}\)</span>).</p>
+<p>Now two part of the process are still unexplained:</p>
+<ul>
+<li>How to obtain the attention masks (and why use them) ?</li>
+<li>How to obtain the final diarization output from the final query ?</li>
+</ul>
+</section>
+<section id="attention-masks" class="level2">
+<h2 class="anchored" data-anchor-id="attention-masks">Attention masks</h2>
+<p>Actually the two last points are obtained from the same process. Let’s first lay out how it’s all connected:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    Q["Q\n(N, D)"]:::vector --&gt; mlp[MLP]:::module
+    E2["E\n(T, D)"]:::vector ----&gt; matmul(("mat\nmul")):::op
+    Q --&gt; linear[Linear]:::module
+
+    subgraph mm [MaskModule]
+    mlp --&gt; Q'["Q'\n(N, D)"]:::vector
+    Q' --transpose--&gt; matmul
+    matmul --&gt; mask1["Speaker activation logits\n(T, N)"]:::vector
+    end
+    
+    subgraph masksg [Obtaining the attention mask]
+    mask1 --&gt; downsample("Downsample\n(Linear interpolation)"):::op
+    downsample --&gt; mask2["Attention Mask\n(T', N)"]:::vector
+    end
+
+    mask1 --&gt; sigmoid(Sigmoid):::op
+
+    subgraph final ["Obtaining Y from QL (last query)"]
+    sigmoid --&gt; y1["Y&lt;sup&gt;~&lt;/sup&gt; speaker activations\n(T, N)"]:::vector
+    linear --&gt; sigmoid2(Sigmoid):::op
+    sigmoid2 --&gt; p["p speaker probabilities\n(N,)"]:::vector
+
+    p --&gt; filt("Keep dimensions of Y&lt;sup&gt;~&lt;/sup&gt; where p &gt; θ"):::op
+    y1 --&gt; filt
+    filt --&gt; y2["Y\n(T, S)"]:::vector
+    end
+
+
+    classDef module fill:#f99,stroke:#333,stroke-width:4px;
+    classDef vector fill:#ddf,stroke:#88d,stroke-width:2px,stroke-dasharray: 10 4;
+    classDef op fill:#eee,stroke:#333,stroke-width:4px;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="creating-the-next-attention-mask" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-next-attention-mask">Creating the next attention mask</h3>
+<p>The attention masks are generated using the <code>MaskModule</code>. It take a query tensor <code>Q: (N,D)</code> and the upsampled embeddings <code>E: (T,D)</code>, and eventually gives us some speaker activation logits of size <code>(T,N)</code>.</p>
+<p>If we downsample this to <code>(T', N)</code>, we get the attention mask. For the motivation I’ll be lazy and just quote the paper which explains very it clearly:</p>
+<blockquote class="blockquote">
+<p>To explain the motivation behind masked attention, we equate each query with a speaker. Without masked attention, queries need to learn to ignore frames not containing their speaker. Masked attention avoids this issue by design: frames irrelevant to the query are simply masked away, allowing the attention mechanism to focus on relevant acoustic information.</p>
+</blockquote>
+<p>(to be clear, by “each query”, they mean “each of the N dimensions in the query tensor”).</p>
+</section>
+<section id="creating-the-final-prediction-y-from-ql" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-final-prediction-y-from-ql">Creating the final prediction Y from QL</h3>
+<p>Speaker activation logits are also used to obtain the final Y.</p>
+<p>We take the speaker activation logits <code>(T,N)</code>, squash each of them in <span class="math inline">\([0,1]\)</span> with the sigmoid function to obtain the speaker activations <span class="math inline">\(\hat{Y}\)</span> <code>: (T,N)</code>. Since we probably have less than <code>N</code> speakers, we don’t need that many dimensions to our output.</p>
+<p>To select which speaker are active, we feed the query to a linear layer that will reduce it from <code>(N,D)</code> to <code>(N,)</code>, and after applying the sigmoid function, we get a tensor describing the probabilities in <span class="math inline">\([0,1]\)</span> that there is an active speaker in each of the <code>(N,)</code> channels.</p>
+<p>We construct the final output by selecting a hyperparameter <code>\theta</code> and keeping only speaker dimensions where the speaker probabilities <code>p</code> are <span class="math inline">\(&gt; \theta\)</span>. In other words, in pytorch language <code>Y = spk_act[:, p &gt; theta]</code>. The paper uses <span class="math inline">\(\theta = 0.8\)</span> but it’s unclear how and when it is chosen.</p>
+</section>
+</section>
+</section>
+<section id="training" class="level1">
+<h1>Training</h1>
+<p>Training is done using the <code>speaker activations</code> <span class="math inline">\(\tilde{Y}\)</span>, <strong>not</strong> on the filtered final prediction <code>Y</code> (used only for inference).</p>
+<section id="permutation-invariance" class="level2">
+<h2 class="anchored" data-anchor-id="permutation-invariance">Permutation invariance</h2>
+<p>During training, the prediction <span class="math inline">\(\tilde{Y}\)</span> <code>(T,N)</code> does not have the same shape as the reference <code>(T,S)</code>. And if we did things right, <code>N&gt;&gt;S</code> so we have to select what are the <code>S</code> speakers from <span class="math inline">\(\tilde{Y}\)</span> we want to compute the loss on (and align their identities with the reference). To do that, the paper uses hungarian matching.</p>
+<p>The cost function it uses for hungarian matching is:</p>
+<p><span class="math inline">\(\mathcal{L} = \lambda_{dia} \cdot \mathcal{L}_{matchdia} + \lambda_{dice} \cdot \mathcal{L}_{matchdice} + \lambda_{cls} \cdot \mathcal{L}_{matchcls}\)</span></p>
+<p>Remember, this does not imply any backpropagation or learning, this is only to decide the best <code>S</code> speakers to select among the <code>N</code> possible speakers.</p>
+<p><span class="math inline">\(\mathcal{L}_{matchdia}\)</span> is the binary cross entropy loss for speaker diarization, averaged over time.</p>
+<p><span class="math inline">\(\mathcal{L}_{matchdice}\)</span> is the sum of Dice loss, explained in next part.</p>
+<p><span class="math inline">\(\mathcal{L}_{matchcls} = - \sum^{S}_{i=1} p_{\Phi(i)}\)</span> is the classification loss, where <span class="math inline">\(\Phi\)</span> is the considered permutation. Note that we depend on <code>p</code> for this, not <span class="math inline">\(\tilde{Y}\)</span> ! This classification loss encourages selection of speakers that are predicted active by the part of the network responsible for active speaker detection (the ‘Linear’ in the figure above).</p>
+<p>For example if we have only one frame with <code>p=[0.01, 0.1, 0.9, 0.8]</code> and <code>ref=[1,1]</code>, we get losses</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\Phi\)</span>’s indices</th>
+<th>classification loss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>{0,1}</td>
+<td>-0.11</td>
+</tr>
+<tr class="even">
+<td>{0,2}</td>
+<td>-0.91</td>
+</tr>
+<tr class="odd">
+<td>{2,3}</td>
+<td>-1.17</td>
+</tr>
+</tbody>
+</table>
+<p>The paper states this is necessary to avoid duplicate predictions during inference, and honestly I can’t figure out why…</p>
+</section>
+<section id="training-loss" class="level2">
+<h2 class="anchored" data-anchor-id="training-loss">Training loss</h2>
+<p>Using the previously found best permutation <span class="math inline">\(\Phi*\)</span> and <span class="math inline">\(\tilde{Y}'\)</span> now accordingly aligned and <code>(T,S)</code>-shaped. The permutation loss is:</p>
+<p><span class="math inline">\(\mathcal{L} = \lambda_{dia} \cdot \mathcal{L}_{dia} + \lambda_{dice} \cdot \mathcal{L}_{dice} + \lambda_{cls} \cdot \mathcal{L}_{cls}\)</span></p>
+<p>With:</p>
+<section id="diarization-loss" class="level4">
+<h4 class="anchored" data-anchor-id="diarization-loss"><strong>dia</strong>rization loss</h4>
+<p>The good old binary cross entropy, I don’t feel like I have to explain it again. <span class="math inline">\(\mathcal{L}_{dia} = BCE(\tilde{Y}', ref)\)</span>.</p>
+<p>The paper mentions only computing it on active speakers, but I think that’s what happens naturally if you use the aligned <span class="math inline">\(\tilde{Y}'\)</span> instead of <span class="math inline">\(\tilde{Y}\)</span>.</p>
+</section>
+<section id="dice-loss" class="level4">
+<h4 class="anchored" data-anchor-id="dice-loss"><strong>dice</strong> loss (<a href="https://arxiv.org/abs/1606.04797">📃</a>)</h4>
+<p>Scale invariant loss that affect all active speaker equally, regardless of their how active they are.</p>
+<p>I’m too lazy to property understand this for now, sorry …</p>
+</section>
+<section id="classification-loss" class="level4">
+<h4 class="anchored" data-anchor-id="classification-loss"><strong>cl</strong>a<strong>s</strong>sification loss</h4>
+<p>Binary cross entropy between the speaker probabilities <code>p: (N,)</code> and the (aligned) reference 0/1 speaker presence.</p>
+<p>To explain it in pytorch pseudocode:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p: (N,)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># phi: (N,) permutation where the S first indices are the S speakers, aligned to ref via hungarian matching</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (S = number of active speakers in the reference)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>NEG_CLS_FACTOR <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> p[phi] <span class="co"># apply the hungarian mapping to p</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create ref_p with S ones and (N-S) zeros</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ref_p <span class="op">=</span> torch.zeros(N)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ref_p[:S] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># less weight to negative classes</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> torch.ones(N) <span class="op">*</span> NEG_CLS_FACTOR</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>w[:S] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>cls_loss <span class="op">=</span> BCE(<span class="bu">input</span><span class="op">=</span>p2, target<span class="op">=</span>ref_p, weight<span class="op">=</span>w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Basically, we penalize the network if it predicts too few or too many speakers. The paper also weights negative classes less with an arbitrary weight of <code>0.2</code>. The idea is to lower the impact of the overwhelwing majority of negative classes (if <code>N=50</code>, we have more than <code>40</code> negative classes most of the time).</p>
+</section>
+<section id="about-the-factors-lambda" class="level4">
+<h4 class="anchored" data-anchor-id="about-the-factors-lambda">About the factors <span class="math inline">\(\lambda\)</span> …</h4>
+<p>I don’t know how they were chosen, I don’t think they are mentionned in the paper. The values used are:</p>
+<ul>
+<li><span class="math inline">\(\lambda_{dia} = 5\)</span></li>
+<li><span class="math inline">\(\lambda_{dice} = 5\)</span></li>
+<li><span class="math inline">\(\lambda_{cls} = 2\)</span></li>
+</ul>
+<p>Which must have been determined using some hyperparameter search to minimize the DER or the training speed. I would be curious to see the influence of these weighting factors on the diarization output / error type distribution / training speed.</p>
+<p>Also they seem to be shared for hungarian matching and training loss.</p>
+</section>
+</section>
+<section id="deep-supervision" class="level2">
+<h2 class="anchored" data-anchor-id="deep-supervision">Deep supervision</h2>
+<p>To help the model and make sure the intermediate predictions of the model “make sense” (all the <code>Qi</code> query tensors), the paper uses <em>deep supervision</em>.</p>
+<p>Without deep supervision, we would simply compute the <code>speaker activations</code> <span class="math inline">\(\tilde{Y}\)</span> and <code>p</code> from the final query <code>QL</code>, apply the losses on them and backpropagate.</p>
+<p><strong>With</strong> deep supervision, we compute <span class="math inline">\(\tilde{Y}\)</span> and <code>p</code> from <strong>each</strong> intermediate query <code>Qi</code> and apply hungarian matching + loss + backpropagation on each of them (even the first one <code>Q0</code>) !</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/FrenchKrab\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
